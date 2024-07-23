@@ -28,7 +28,8 @@ public class SettingsRepository {
 		try (Connection connection = DBUtil.getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_SQL)) {
 			// Set parameters.
-			preparedStatement.setString(1, request.getContent());;
+			preparedStatement.setString(1, request.getContent());
+			;
 			preparedStatement.setString(2, username);
 			preparedStatement.setString(3, username);
 			preparedStatement.setString(4, request.getType());
@@ -49,7 +50,7 @@ public class SettingsRepository {
 				PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_SQL)) {
 			// Set parameters.
 			preparedStatement.setString(1, request.getContent());
-			preparedStatement.setString(2, username);	
+			preparedStatement.setString(2, username);
 			preparedStatement.setString(3, request.getType());
 			preparedStatement.setString(4, request.getImage());
 			preparedStatement.setLong(5, id);

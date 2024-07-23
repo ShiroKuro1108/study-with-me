@@ -74,7 +74,7 @@ public class CategoryRepository {
 				return null;
 			}
 			CategoryModelResponse response = new CategoryModelResponse();
-			while (rs.next()) {	
+			while (rs.next()) {
 				response.setId(rs.getLong("id"));
 				response.setName(rs.getString("name"));
 				response.setDescription(rs.getString("description"));

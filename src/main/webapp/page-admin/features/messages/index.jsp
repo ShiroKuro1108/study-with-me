@@ -1,3 +1,4 @@
+
 <div class="row" id="posts-table">
   <div class="col-12">
     <div class="card card-primary">
@@ -25,15 +26,15 @@
         <table class="table table-head-fixed text-wrap table-sm table-striped">
           <thead>
             <tr>
-              <th>Id</th>
-              <th>Email</th>
-            <th>Subject</th>
-             <th>Message</th>
-              <th>Created Date</th>
-              
-              <th style="width: 95px;">Actions</th>
+                <th>Id</th>
+                <th>Subject</th>
+                <th>Email</th>
+                <th>Create Date</th>
+                <th>Status</th>
+                <th>Message</th>
+                <th style="width: 95px;">Actions</th>
             </tr>
-          </thead>
+        </thead>
           <tbody id="tblPosts">
           </tbody>
         </table>
@@ -53,10 +54,10 @@
       <!-- /.card-header -->
       <div class="card-body">
         <div class="form-group" style="display: none">
-          <label for="name">Id</label> <input type="text" name="id" class="form-control" id="inpPostsId">
+          <label for="name">id</label> <input type="text" name="id" class="form-control" id="inpPostsId">
         </div>
         <div class="form-group">
-          <label for="name">Subject</label> <input class="form-control" placeholder="Subject" id="inpPostsTitle">
+          <label for="name">Subject</label> <input class="form-control" placeholder="Title" id="inpPostsTitle">
         </div>
           <!-- Start Edit custom form -->
         
@@ -90,4 +91,5 @@
     <!-- /.card -->
   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="${pageContext.request.contextPath}/page-admin/features/messages/index.js"></script>

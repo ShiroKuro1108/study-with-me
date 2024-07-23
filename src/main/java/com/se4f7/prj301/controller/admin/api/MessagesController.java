@@ -3,6 +3,7 @@ package com.se4f7.prj301.controller.admin.api;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +20,8 @@ import com.se4f7.prj301.utils.HttpUtil;
 import com.se4f7.prj301.utils.ResponseUtil;
 
 @WebServlet(urlPatterns = { "/admin/api/messages" })
+// Add @MultipartConfig for enable upload file.
+@MultipartConfig
 public class MessagesController extends HttpServlet {
 
 	private static final long serialVersionUID = -331986167361646886L;
@@ -28,11 +31,17 @@ public class MessagesController extends HttpServlet {
 	public void init() {
 		messagesService = new MessagesServiceImpl();
 	}
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			MessagesModelRequest requestBody = HttpUtil.of(req.getReader()).toModel(MessagesModelRequest.class);
+			// Get JSON payload from request.
+			// Parse JSON stringify from request to Java Class.
+			MessagesModelRequest requestBody = HttpUtil.ofFormData(req.getPart("payload"))
+					.toModel(MessagesModelRequest.class);
+			// Get username from header request.
 			String username = req.getAttribute("username").toString();
+			// Call service create a new Messages.
 			boolean result = messagesService.create(requestBody, username);
 			ResponseUtil.success(resp, result);
 		} catch (Exception e) {
@@ -43,15 +52,19 @@ public class MessagesController extends HttpServlet {
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			MessagesModelRequest requestBody = HttpUtil.of(req.getReader()).toModel(MessagesModelRequest.class);
+			// Get JSON payload from request.
+			// Parse JSON stringify from request to Java Class.
+			MessagesModelRequest requestBody = HttpUtil.ofFormData(req.getPart("payload"))
+					.toModel(MessagesModelRequest.class);
+			// Get username from header request.
 			String username = req.getAttribute("username").toString();
+			// Call service update Messages.
 			boolean result = messagesService.update(req.getParameter("id"), requestBody, username);
 			ResponseUtil.success(resp, result);
 		} catch (Exception e) {
 			ResponseUtil.error(resp, e.getMessage());
 		}
 	}
-	
 
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

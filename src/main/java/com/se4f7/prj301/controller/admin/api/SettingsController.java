@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import com.se4f7.prj301.constants.ErrorMessage;
 import com.se4f7.prj301.constants.QueryType;
 import com.se4f7.prj301.model.PaginationModel;
@@ -60,7 +59,8 @@ public class SettingsController extends HttpServlet {
 			// Get username from header request.
 			String username = req.getAttribute("username").toString();
 			// Call service update Posts.
-			boolean result = settingsService.update(req.getParameter("id"), requestBody, req.getPart("image"), username);
+			boolean result = settingsService.update(req.getParameter("id"), requestBody, req.getPart("image"),
+					username);
 			ResponseUtil.success(resp, result);
 		} catch (Exception e) {
 			ResponseUtil.error(resp, e.getMessage());
@@ -94,7 +94,7 @@ public class SettingsController extends HttpServlet {
 				SettingsModelResponse result = settingsService.getById(id);
 				ResponseUtil.success(resp, result);
 				break;
-				
+
 			default:
 				ResponseUtil.error(resp, ErrorMessage.TYPE_INVALID);
 			}

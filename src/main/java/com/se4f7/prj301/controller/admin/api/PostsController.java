@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import com.se4f7.prj301.constants.ErrorMessage;
 import com.se4f7.prj301.constants.QueryType;
 import com.se4f7.prj301.model.PaginationModel;

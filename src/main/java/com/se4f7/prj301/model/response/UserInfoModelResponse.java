@@ -2,11 +2,11 @@ package com.se4f7.prj301.model.response;
 
 import com.se4f7.prj301.model.BaseModel;
 
-public class UserInfoModelResponse extends BaseModel{
+public class UserInfoModelResponse extends BaseModel {
 
 	private String username;
 	// TODO: define more than fields for user info.
-	
+
 	public String getUsername() {
 		return username;
 	}
@@ -23,5 +23,5 @@ public class UserInfoModelResponse extends BaseModel{
 	public UserInfoModelResponse() {
 		super();
 	}
-	
+
 }
