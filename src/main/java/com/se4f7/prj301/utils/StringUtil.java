@@ -13,7 +13,7 @@ public class StringUtil {
 			throw new RuntimeException(fieldName + ErrorMessage.IS_NOT_A_NUMBER);
 		}
 	}
-
+	
 	public static Integer parseInt(String fieldName, String value) {
 		if (value == null) {
 			throw new RuntimeException(fieldName + ErrorMessage.FIELD_REQUIRED);

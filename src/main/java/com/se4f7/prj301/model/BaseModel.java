@@ -6,7 +6,7 @@ public class BaseModel {
 	private String createdBy;
 	private String updatedDate;
 	private String updatedBy;
-
+	
 	public Long getId() {
 		return id;
 	}

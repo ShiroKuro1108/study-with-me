@@ -25,8 +25,13 @@ public class JwtTokenUtil {
 		HashMap<String, Object> claims = new HashMap<>();
 		claims.put("id", id);
 		claims.put("username", username);
-		return Jwts.builder().setSubject(Long.toString(id)).setClaims(claims).setIssuedAt(now).setExpiration(expiryDate)
-				.signWith(SignatureAlgorithm.HS512, JWT_SECRET).compact();
+		return Jwts.builder()
+				.setSubject(Long.toString(id))
+				.setClaims(claims)
+				.setIssuedAt(now)
+				.setExpiration(expiryDate)
+				.signWith(SignatureAlgorithm.HS512, JWT_SECRET)
+				.compact();
 	}
 
 	public static Claims getAllClaimsFromToken(String token) {

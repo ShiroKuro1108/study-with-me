@@ -12,22 +12,31 @@
         Category
       </a>
     </li>
-    <li class="nav-item">
+     <li class="nav-item">
       <a href="${pageContext.request.contextPath}/page-admin/features/posts/index.jsp" class="sidebar-menu nav-link">
         <i class="nav-icon fas fa-newspaper"></i>
         Posts
       </a>
     </li>
-        <li class="nav-item">
-      <a href="${pageContext.request.contextPath}/page-admin/features/messages/index.jsp" class="sidebar-menu nav-link">
-        <i class="nav-icon 	fas fa-mail-bulk"></i>
-        Messages
+    <li class="nav-item">
+      <a href="${pageContext.request.contextPath}/page-admin/features/ads/index.jsp" class="sidebar-menu nav-link">
+        <i class="nav-icon fas fa-ad"></i>
+        Ads
       </a>
     </li>
-         <li class="nav-item">
+   
+     <li class="nav-item">
       <a href="${pageContext.request.contextPath}/page-admin/features/settings/index.jsp" class="sidebar-menu nav-link">
-        <i class="nav-icon fas fa-cog"></i> 
+        <i class="nav-icon fas fa-cog"></i>
+   
         Web Settings
+      </a>
+    </li>
+      
+     <li class="nav-item">
+      <a href="${pageContext.request.contextPath}/page-admin/features/messages/index.jsp" class="sidebar-menu nav-link">
+        <i class="nav-icon fas fa-envelope"></i>
+       Messages
       </a>
     </li>
   </ul>

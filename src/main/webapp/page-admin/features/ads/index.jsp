@@ -2,12 +2,14 @@
   <div class="col-12">
     <div class="card card-primary">
       <div class="card-header">
-        <h3 class="card-title">Messages</h3>
+        <h3 class="card-title">Ads</h3>
       </div>
       <div class="row p-2">
         <div class="col-6">
           <div class="btn-group">
-            
+            <button type="button" class="btn btn-primary btn-sm" onclick="swicthViewPosts(false)">
+              <i class="fa fa-plus"></i> Create
+            </button>
           </div>
         </div>
         <div class="col-6">
@@ -26,11 +28,15 @@
           <thead>
             <tr>
               <th>Id</th>
-              <th>Email</th>
-            <th>Subject</th>
-             <th>Message</th>
-              <th>Created Date</th>
-              
+               <th>Position</th>
+               <th>Width</th>
+              <th>Height</th>
+               <th>Status</th>
+               <th>Url</th>
+              <th>Images</th>
+               <th>Updated By</th>
+              <th>Updated Date</th>
+             
               <th style="width: 95px;">Actions</th>
             </tr>
           </thead>
@@ -48,27 +54,39 @@
   <div class="col-12">
     <div class="card card-primary">
       <div class="card-header">
-        <h3 class="card-title">Create/Edit Posts</h3>
+        <h3 class="card-title">Create/Edit Ads</h3>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
         <div class="form-group" style="display: none">
-          <label for="name">Id</label> <input type="text" name="id" class="form-control" id="inpPostsId">
+          <label for="name">id</label> <input type="text" name="id" class="form-control" id="inpPostsId">
         </div>
         <div class="form-group">
-          <label for="name">Subject</label> <input class="form-control" placeholder="Subject" id="inpPostsTitle">
+          <label for="name">Position</label> <input class="form-control" placeholder="Position" id="inpPostsTitle">
         </div>
-          <!-- Start Edit custom form -->
         
-        <div class="form-group">
-          <label for="name">Email</label> <input class="form-control" placeholder="Email" id="inpEmailTitle">
+          <!-- Start Edit custom form -->
+           <div class="form-group">
+          <label for="name">Width</label> <input class="form-control" placeholder="Width" id="inpWidthTitle">
         </div>
         <div class="form-group">
-          <label for="name">Message</label> <input class="form-control" placeholder="Message" id="inpMessageTitle">
+          <label for="name">Height</label> <input class="form-control" placeholder="Height" id="inpHeightTitle">
         </div>
+        <div class="form-group">
+       
+          <label for="name">URl</label> <input class="form-control" placeholder="URl" id="inpUrlTitle">
+        </div>
+        
         <!-- End Edit custom form -->
        
-       
+        <div class="form-group">
+          <label for="name">Images</label>
+          <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inpPostsBanner" name="images" multiple>
+ 
+            <label class="custom-file-label" for="inpPostsBanner">Choose file(s)</label>
+          </div>
+        </div>
        
       </div>
       <!-- /.card-body -->
@@ -90,4 +108,4 @@
     <!-- /.card -->
   </div>
 </div>
-<script src="${pageContext.request.contextPath}/page-admin/features/messages/index.js"></script>
+<script src="${pageContext.request.contextPath}/page-admin/features/ads/index.js"></script>

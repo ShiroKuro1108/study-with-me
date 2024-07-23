@@ -18,7 +18,7 @@ public class HomeController extends HttpServlet {
 			throws ServletException, IOException {
 		doGet(request, response);
 	}
-
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("page-admin/index.jsp");

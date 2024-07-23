@@ -71,5 +71,5 @@ public class PostsModelResponse extends BaseModel {
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
-
+	
 }
